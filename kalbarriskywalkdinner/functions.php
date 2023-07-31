@@ -21,9 +21,6 @@ if (file_exists($composer_autoload)) {
 }
 
 include 'php/tiny-mce-extend.php';
-if (file_exists(__DIR__ . '/ajax/ajax.php')) {
-    include 'ajax/ajax.php';
-}
 
 /**
  * Setup our custom options page
@@ -76,7 +73,7 @@ Timber::$autoescape = false;
  * We're going to configure our theme inside of a subclass of Timber\Site
  * You can move this to its own file and include here via php's include("MySite.php")
  */
-class StartDigital extends Timber\Site
+class KalbarriSkywalkDinner extends Timber\Site
 {
 	/** Add timber support. */
 	public function __construct()
@@ -124,8 +121,8 @@ class StartDigital extends Timber\Site
     /** This is where you can register custom CSS & JS files. */
     public function register_assets()
     {
-        wp_enqueue_style('startdigital', get_stylesheet_directory_uri() . '/static/style.css', false, filemtime(get_stylesheet_directory() . '/static/style.css'));
-        wp_enqueue_script('startdigital', get_stylesheet_directory_uri() . '/static/site.js', false, filemtime(get_stylesheet_directory() . '/static/site.js') );
+        wp_enqueue_style('kalbarriskywalkdinner', get_stylesheet_directory_uri() . '/static/style.css', false, filemtime(get_stylesheet_directory() . '/static/style.css'));
+        wp_enqueue_script('kalbarriskywalkdinner', get_stylesheet_directory_uri() . '/static/site.js', false, filemtime(get_stylesheet_directory() . '/static/site.js') );
 
         // wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/PASTE_PROJECT_ID_HERE.css');
     }
@@ -185,7 +182,7 @@ class StartDigital extends Timber\Site
 		 */
 		register_nav_menus(
 			array(
-				'primary' => __('Primary Menu', 'startdigital'),
+				'primary' => __('Primary Menu', 'kalbarriskywalkdinner'),
 			)
 		);
 
@@ -196,4 +193,4 @@ class StartDigital extends Timber\Site
 	}
 }
 
-new StartDigital();
+new KalbarriSkywalkDinner();
